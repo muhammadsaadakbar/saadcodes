@@ -1,0 +1,71 @@
+# robots.txt for saadcodes.vercel.app
+# Generated for SEO optimization
+
+User-agent: *
+Allow: /
+
+# Allow all major search engine bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: TwitterBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# Disallow areas that shouldn't be indexed
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /temp/
+Disallow: /cache/
+Disallow: *.json$
+Disallow: /node_modules/
+
+# Allow important files
+Allow: /images/
+Allow: /css/
+Allow: /js/
+Allow: /fonts/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+Allow: /*.ico
+Allow: /manifest.json
+Allow: /sitemap.xml
+
+# Sitemap location
+Sitemap: https://saadcodes.vercel.app/sitemap.xml
+
+# Crawl delay (be respectful)
+Crawl-delay: 1
+
+# Host directive (preferred domain)
+Host: https://saadcodes.vercel.app
