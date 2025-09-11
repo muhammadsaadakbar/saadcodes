@@ -279,29 +279,29 @@ header {
   width: 70%;
 }
 
-#checkbox:checked + .toggle .bars {
+  .toggle.active .bars {
   position: absolute;
   transition-duration: 0.5s;
 }
 
-#checkbox:checked + .toggle #bar2 {
+ .toggle.active #bar2 {
   transform: scaleX(0);
   transition-duration: 0.5s;
 }
 
-#checkbox:checked + .toggle #bar1 {
+ .toggle.active #bar1 {
   width: 100%;
   transform: rotate(45deg);
   transition-duration: 0.5s;
 }
 
-#checkbox:checked + .toggle #bar3 {
+ .toggle.active #bar3 {
   width: 100%;
   transform: rotate(-45deg);
   transition-duration: 0.5s;
 }
 
-#checkbox:checked + .toggle {
+ .toggle.active {
   transition-duration: 0.5s;
   transform: rotate(180deg);
 }
@@ -729,3 +729,4 @@ footer {
   white-space: nowrap;
   border: 0;
 }
+
