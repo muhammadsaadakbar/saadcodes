@@ -4,9 +4,8 @@
 class NavigationManager {
   constructor() {
     this.mobileNav = document.querySelector(".mobile-nav");
-    this.navMenuBtn = document.querySelector(".nav-menu-btn");
-    this.menuCheckBox = document.getElementById("checkbox");
-    this.mobileOverlay = document.querySelector(".mobile-overlay");
+    this.menuBtn = document.querySelector(".toggle");
+     this.mobileOverlay = document.querySelector(".mobile-overlay");
     this.mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
 
     this.init();
@@ -19,10 +18,8 @@ class NavigationManager {
 
   bindEvents() {
     // Mobile menu toggle events
-    this.navMenuBtn?.addEventListener("click", () => this.toggleMobileNav());
-
-    this.mobileOverlay?.addEventListener("click", () => this.closeMobileNav());
-    if (this.mobileOverlay.classList.contains("active")) {
+ 
+     if (this.mobileOverlay.classList.contains("active")) {
       this.mobileOverlay?.addEventListener("click", () =>
         this.closeMobileNav()
       );
@@ -58,24 +55,22 @@ class NavigationManager {
       }
     });
   }
-  toggleMenuBtn() {
-    this.menuCheckBox.checked = !this.menuCheckBox.checked;
-  }
+ 
   toggleMobileNav() {
     const isActive = this.mobileNav?.classList.contains("active");
     if (isActive) {
-      this.menuCheckBox.checkbox = true;
-      this.closeMobileNav();
+      this.menuBtn.classList.remove("active");
+       this.closeMobileNav();
     } else {
-      this.menuCheckBox.checkbox = false;
+this.menuBtn.classList.add("active");
       this.openMobileNav();
       this.toggleMenuBtn();
     }
   }
 
   openMobileNav() {
-    this.toggleMenuBtn();
-    this.mobileNav?.classList.add("active");
+    this.menuBtn.classList.add("active");
+     this.mobileNav?.classList.add("active");
     this.mobileOverlay?.classList.add("active");
     document.body.style.overflow = "hidden";
 
@@ -86,7 +81,7 @@ class NavigationManager {
   }
 
   closeMobileNav() {
-    this.toggleMenuBtn();
+    this.menuBtn.classList.remove("active");
     this.mobileNav?.classList.remove("active");
     this.mobileOverlay?.classList.remove("active");
 
@@ -480,3 +475,4 @@ document.addEventListener("DOMContentLoaded", () => {
     console.warn("Resource failed to load:", e.target.src || e.target.href);
   });
 });
+
