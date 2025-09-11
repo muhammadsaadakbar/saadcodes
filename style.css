@@ -238,11 +238,6 @@ header {
 .mobile-nav-link:hover {
   color: var(--accent-color, #f39c12);
 }
-/* Mobile menu button (hamburger) */
-
-#checkbox {
-  display: none;
-}
 
 .toggle {
   position: relative;
@@ -279,29 +274,29 @@ header {
   width: 70%;
 }
 
-  .toggle.active .bars {
+.toggle.active .bars {
   position: absolute;
   transition-duration: 0.5s;
 }
 
- .toggle.active #bar2 {
+.toggle.active #bar2 {
   transform: scaleX(0);
   transition-duration: 0.5s;
 }
 
- .toggle.active #bar1 {
+.toggle.active #bar1 {
   width: 100%;
   transform: rotate(45deg);
   transition-duration: 0.5s;
 }
 
- .toggle.active #bar3 {
+.toggle.active #bar3 {
   width: 100%;
   transform: rotate(-45deg);
   transition-duration: 0.5s;
 }
 
- .toggle.active {
+.toggle.active {
   transition-duration: 0.5s;
   transform: rotate(180deg);
 }
@@ -729,4 +724,3 @@ footer {
   white-space: nowrap;
   border: 0;
 }
-

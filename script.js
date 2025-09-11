@@ -5,7 +5,7 @@ class NavigationManager {
   constructor() {
     this.mobileNav = document.querySelector(".mobile-nav");
     this.menuBtn = document.querySelector(".toggle");
-     this.mobileOverlay = document.querySelector(".mobile-overlay");
+    this.mobileOverlay = document.querySelector(".mobile-overlay");
     this.mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
 
     this.init();
@@ -18,8 +18,8 @@ class NavigationManager {
 
   bindEvents() {
     // Mobile menu toggle events
- 
-     if (this.mobileOverlay.classList.contains("active")) {
+    this.menuBtn.addEventListener("click", () => this.toggleMobileNav());
+    if (this.mobileOverlay.classList.contains("active")) {
       this.mobileOverlay?.addEventListener("click", () =>
         this.closeMobileNav()
       );
@@ -55,22 +55,26 @@ class NavigationManager {
       }
     });
   }
- 
+
   toggleMobileNav() {
     const isActive = this.mobileNav?.classList.contains("active");
+
     if (isActive) {
       this.menuBtn.classList.remove("active");
-       this.closeMobileNav();
+      this.mobileOverlay.classList.remove("active");
+      this.closeMobileNav();
     } else {
-this.menuBtn.classList.add("active");
+      this.menuBtn.classList.add("active");
+      this.mobileOverlay.classList.add("active");
+
       this.openMobileNav();
-      this.toggleMenuBtn();
     }
   }
 
   openMobileNav() {
     this.menuBtn.classList.add("active");
-     this.mobileNav?.classList.add("active");
+
+    this.mobileNav?.classList.add("active");
     this.mobileOverlay?.classList.add("active");
     document.body.style.overflow = "hidden";
 
@@ -82,6 +86,7 @@ this.menuBtn.classList.add("active");
 
   closeMobileNav() {
     this.menuBtn.classList.remove("active");
+
     this.mobileNav?.classList.remove("active");
     this.mobileOverlay?.classList.remove("active");
 
@@ -475,4 +480,3 @@ document.addEventListener("DOMContentLoaded", () => {
     console.warn("Resource failed to load:", e.target.src || e.target.href);
   });
 });
-
